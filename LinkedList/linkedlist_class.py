@@ -76,6 +76,45 @@ class LinkedList:
         
         # Increment the length
         self.length += 1
+
+    
+    def insert(self, index, data):
+        """
+        To add a node at a specific position (zero-based index)
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        # Insert at the beginning
+        if index == 0:
+            return self.prepend(data)
+        
+        # Insert at the end
+        elif index == self.length or index == -1:
+            return self.append(data)
+        
+        # For invalid index we return False
+        if index < 0 or index > self.length:
+            return False
+        
+        # Create a new node
+        new_node = Node(data)
+        
+        # Use a temp variable to loop through starting at head
+        current = self.head
+
+        # Loop from head to the node just before the node at the given index
+        for _ in range(index-1):
+            current = current.next
+        
+        # New node points to the node at the index position
+        new_node.next = current.next
+
+        # The node just before the given index now points to the new node
+        current.next = new_node
+        
+        # Increment the length
+        self.length += 1
             
 
 
