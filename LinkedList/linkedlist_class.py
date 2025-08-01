@@ -2,12 +2,12 @@ class Node:
     """
     Node is the fundamental block for a LinkedList
     """
-    def __init__(self, data):
-        self.data = data
+    def __init__(self, value):
+        self.value = value
         self.next = None
     
     def __repr__(self):
-        return f"<Node: [{self.data}]>"
+        return f"<Node: [{self.value}]>"
 
 class LinkedList:
     def __init__(self):
@@ -23,23 +23,23 @@ class LinkedList:
             node = []
             while current:
                 if current == self.head:
-                    node.append(f"[Head: {current.data}]")
+                    node.append(f"[Head: {current.value}]")
                 elif current == self.tail:
-                    node.append(f"[Tail: {current.data}]")
+                    node.append(f"[Tail: {current.value}]")
                 else:
-                    node.append(f"[{current.data}]")
+                    node.append(f"[{current.value}]")
                 current = current.next
             return " -> ".join(node)
         
-    def append(self, data):
+    def append(self, value):
         """
         To add a new node at the end of the list
         Time Complexity - O(1)
         Space Complexity - O(1)
         """
 
-        # Create a new node with the given data 
-        new_node = Node(data)
+        # Create a new node with the given value 
+        new_node = Node(value)
 
         # If the list is empty, assign both head and tail to the new node
         if self.head is None:
@@ -54,15 +54,15 @@ class LinkedList:
         # Increment the length
         self.length += 1
 
-    def prepend(self, data):
+    def prepend(self, value):
         """
         To add a new node at the beginning of the list
         Time Complexity - O(1)
         Space Complexity - O(1)
         """
 
-        # Create a new node with the given data
-        new_node = Node(data)
+        # Create a new node with the given value
+        new_node = Node(value)
 
         # If list is empty, assign both head and tail to the new node
         if self.head is None:
@@ -78,7 +78,7 @@ class LinkedList:
         self.length += 1
 
     
-    def insert(self, index, data):
+    def insert(self, index, value):
         """
         To add a node at a specific position (zero-based index)
         Time Complexity - O(n)
@@ -87,18 +87,18 @@ class LinkedList:
 
         # Insert at the beginning
         if index == 0:
-            return self.prepend(data)
+            return self.prepend(value)
         
         # Insert at the end
         elif index == self.length or index == -1:
-            return self.append(data)
+            return self.append(value)
         
         # For invalid index we return False
         if index < 0 or index > self.length:
             return False
         
         # Create a new node
-        new_node = Node(data)
+        new_node = Node(value)
         
         # Use a temp variable to loop through starting at head
         current = self.head
@@ -129,7 +129,7 @@ class LinkedList:
 
         # Loop through the linked_list till the end
         while current:
-            print(current.data)
+            print(current.value)
             current = current.next
         
     def search(self, target):
@@ -149,7 +149,7 @@ class LinkedList:
         while current:
 
             # If current node value equal to target return its index
-            if current.data == target:
+            if current.value == target:
                 return index
             
             else:
@@ -185,11 +185,21 @@ class LinkedList:
         
         # Return the node at the given index
         return current
+    
+    def set_value(self, index, value):
+        """
+        Updates the value of a node at the given index and returns True else returns False
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        # Use the get method to get the node at the given index
+        node = self.get(index)
+
+        # If such node exits, update its value and return True else return False
+        if node:
+            node.value = value
+            return True
+        return False
             
 
-
-l = LinkedList()
-l.append(10)
-l.append(20)
-l.append(30)
-l.append(40)
