@@ -119,7 +119,7 @@ class LinkedList:
         
     def traverse(self):
         """
-        To print all the node values in the linkedlist
+        To print all the node values in the linked_list
         Time Complexity - O(n)
         Space Complexity - O(1)
         """
@@ -134,7 +134,7 @@ class LinkedList:
         
     def search(self, target):
         """
-        Returns the index of the target value if present else -1
+        Returns the index of the target value if present else returns -1
         Time Complexity - O(n)
         Space Complexity - O(1)
         """
@@ -160,4 +160,36 @@ class LinkedList:
 
         # Return -1 if not found
         return -1
+    
+    def get(self, index):
+        """
+        Returns the node at the given index
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        # Return None for invalid index
+        if index < -1 or index >= self.length:
+            return None
+        
+        # Return the last node for index -1
+        if index == -1:
+            return self.tail
+
+        # Initial the pointer to head
+        current = self.head
+
+        # Increment pointer till it points to the given index
+        for _ in range(index):
+            current = current.next
+        
+        # Return the node at the given index
+        return current
             
+
+
+l = LinkedList()
+l.append(10)
+l.append(20)
+l.append(30)
+l.append(40)
