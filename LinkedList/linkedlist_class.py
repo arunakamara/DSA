@@ -276,3 +276,42 @@ class LinkedList:
         # Return the deleted node
         return popped_node
 
+
+    def remove(self, index):
+        """
+        Delete and return the node at the given index else returns None
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        # Return None if the index is greater than the length of the list or less than -1
+        if index >= self.length or index < -1:  
+            return None
+        
+        # If the index is 0, return the pop_first method
+        if index == 0:
+            return self.pop_first()
+        
+        # Return pop method if index is -1 or equal to the length - 1
+        if index == self.length - 1 or index == -1:
+            return self.pop()
+        
+        # Use the get method to the node just before the node at the given index
+        prev_node = self.get(index-1)
+
+        # Assign the node at the given index to popped_node
+        popped_node = prev_node.next
+
+        # Make the node before the popped_node points to the node after the popped_node
+        prev_node.next = popped_node.next
+
+        # To disconnect the popped_node from the rest of the list, assign its next node to None
+        popped_node.next = None
+
+        # Decrement the value of length
+        self.length -= 1
+
+        # Return the popped_node
+        return popped_node
+        
+
