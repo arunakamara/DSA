@@ -236,9 +236,43 @@ class LinkedList:
         return popped_node
     
 
+    def pop(self):
+        """
+        Deletes and returns the last node from the list else returns None
+        Time Complexity - O(1)
+        Space Complexity - O(1)
+        """
 
-l = LinkedList()
-l.append(10)
-l.append(20)
-l.append(30)
-l.append(40)
+        # If the list is empty return None
+        if self.head is None:
+            return None
+        
+        # Assign popped_node the last node
+        popped_node = self.tail
+
+        # Assign both head and tail to None if length is 1
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+
+        else:
+
+            # Use a temporary pointer to locate the second-to-last node
+            current = self.head
+
+            # Move the pointer to the its next node till it reaches the node just before the tail
+            while current.next is not self.tail:
+                current = current.next
+
+            # Make tail points to the second-to-last node making it the new tail
+            self.tail = current
+
+            # Make the second-to-last node next be None to disconnect it from the previous tail
+            current.next = None
+        
+        # Decrement the value of length
+        self.length -= 1
+
+        # Return the deleted node
+        return popped_node
+
