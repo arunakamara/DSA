@@ -203,3 +203,42 @@ class LinkedList:
         return False
             
 
+    def pop_first(self):
+        """
+        Delete and returns the first node from the list else returns None
+        Time Complexity - O(1)
+        Space Complexity - O(1)
+        """
+        # Return None if the list is empty
+        if self.head is None:
+            return None
+        
+        # Assign the node that is going to be deleted to popped_node
+        popped_node = self.head
+        
+        # Assign both head and tail to None if the length is 1
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+
+        else:
+
+            # Make head points to the next node
+            self.head = self.head.next
+
+            # Make the deleted node point to None to disconnect it from the rest of the list
+            popped_node.next = None
+        
+        # Decrement the length by 1
+        self.length -= 1
+
+        # Return the deleted node
+        return popped_node
+    
+
+
+l = LinkedList()
+l.append(10)
+l.append(20)
+l.append(30)
+l.append(40)
