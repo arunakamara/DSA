@@ -127,9 +127,37 @@ class LinkedList:
         # Use a pointer current and initialize it to the head
         current = self.head
 
+        # Loop through the linked_list till the end
         while current:
-            print(current)
+            print(current.data)
             current = current.next
+        
+    def search(self, target):
+        """
+        Returns the index of the target value if present else -1
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        # Initialize current as a temp pointer to the head
+        current = self.head
+
+        # Initialize index as 0 for zero-based indexing
+        index = 0
+
+        # Loop through the list
+        while current:
+
+            # If current node value equal to target return its index
+            if current.data == target:
+                return index
             
+            else:
 
+                # current points to the next node and increment index by 1
+                current = current.next
+                index += 1
 
+        # Return -1 if not found
+        return -1
+            
