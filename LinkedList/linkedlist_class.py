@@ -115,7 +115,21 @@ class LinkedList:
         
         # Increment the length
         self.length += 1
+
+        
+    def traverse(self):
+        """
+        To print all the node values in the linkedlist
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        # Use a pointer current and initialize it to the head
+        current = self.head
+
+        while current:
+            print(current)
+            current = current.next
             
 
 
-l = LinkedList()
