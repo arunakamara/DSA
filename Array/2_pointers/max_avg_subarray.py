@@ -1,6 +1,8 @@
 def find_max_avg(arr, k):
     """
     Returns the max average for subarray of length k
+    Time Complexity - O(n)
+    Space Complexity - O(1)
     """
     # Convert the given array into a prefix_sum array
     for i in range(1, len(arr)):
