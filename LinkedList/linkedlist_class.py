@@ -315,3 +315,13 @@ class LinkedList:
         return popped_node
         
 
+    def delete_all(self):
+        self.head = None
+        self.tail = None
+        self.length = 0
+
+l = LinkedList()
+l.append(10)
+l.append(20)
+l.append(30)
+l.append(40)
