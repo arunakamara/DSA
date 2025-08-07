@@ -110,6 +110,23 @@ class CSLinkedList:
             
             self.length += 1
 
+    def traverse(self):
+        """
+        Prints out the values of each node in the list
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        current = self.head
+
+        while current:
+            print(current.value)
+            current = current.next
+            
+            # Exit the loop if we are back at the head node
+            if current == self.head:
+                break
+
 
 csl = CSLinkedList()
 csl.append(10)
@@ -118,5 +135,6 @@ csl.append(30)
 csl.append(40)
 csl.append(50)
 print(csl)
+csl.traverse()
 
         
