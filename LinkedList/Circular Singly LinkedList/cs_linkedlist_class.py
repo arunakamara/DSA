@@ -20,6 +20,24 @@ class CSLinkedList:
         self.tail = None
         self.length = 0
 
+    def __str__(self):
+        # Initialize the current to the head node and result to an empty string
+        current = self.head
+        result = ''
+
+        # Loop till the end of the list
+        while current:
+            result += str(current.value)
+            current = current.next
+
+            # Check if the current node is equal to the head node
+            # If it is break
+            if current is self.head:
+                break
+            result += ' -> '
+        
+        return result
+
 
     def append(self, value):
         """
@@ -47,7 +65,9 @@ class CSLinkedList:
 csl = CSLinkedList()
 csl.append(10)
 csl.append(20)
-print(csl.head.value)
-print(csl.head.next.value)
-print(csl.tail.next.value == csl.head.value)
+csl.append(30)
+csl.append(40)
+csl.append(50)
+print(csl)
+
         
