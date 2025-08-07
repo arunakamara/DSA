@@ -3,6 +3,9 @@ class Node:
         self.value = value
         self.next = None
 
+    def __repr__(self):
+        return f"<Node: {self.value}>"
+
 
 class CSLinkedList:
     # def __init__(self, value):
@@ -20,7 +23,7 @@ class CSLinkedList:
         self.tail = None
         self.length = 0
 
-    def __str__(self):
+    def __repr__(self):
         # Initialize the current to the head node and result to an empty string
         current = self.head
         result = ''
@@ -60,6 +63,52 @@ class CSLinkedList:
             self.tail = new_node
 
         self.length += 1 
+
+    def prepend(self, value):
+        """
+        Adds a new node at the beginning of the list
+        Time Complexity - O(1)
+        Space Complexity - O(1)
+        """
+
+        new_node = Node(value)
+
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+            new_node.next = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
+            self.tail.next = new_node
+        
+        self.length += 1
+        
+    def insert(self, index, value):
+        """
+        Adds a new node at the given index
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        if index < 0 or index > self.length:
+            raise Exception("Index out of range")
+        
+        if index == 0:
+            return self.prepend(value)
+        elif index == self.length:
+            return self.append(value)
+        else:
+            new_node = Node(value)
+            current = self.head
+
+            for _ in range(index-1):
+                current = current.next
+
+            new_node.next = current.next
+            current.next = new_node
+            
+            self.length += 1
 
 
 csl = CSLinkedList()
