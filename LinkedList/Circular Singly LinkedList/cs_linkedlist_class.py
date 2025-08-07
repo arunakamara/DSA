@@ -301,14 +301,19 @@ class CSLinkedList:
         self.tail = None
         self.length = 0
 
+def main():
+    csl = CSLinkedList()
+    csl.append(10)
+    csl.append(20)
+    csl.append(30)
+    csl.append(40)
+    csl.append(50)
+    print(csl)
+
+if __name__ == "__main__":
+    main()
 
 
-csl = CSLinkedList()
-csl.append(10)
-csl.append(20)
-csl.append(30)
-csl.append(40)
-csl.append(50)
-print(csl)
+
 
         
