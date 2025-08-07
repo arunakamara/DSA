@@ -182,6 +182,42 @@ class CSLinkedList:
         else:
             return False
 
+    
+    def pop_first(self):
+        """
+        Deletes and return the first node of the list
+        Time Complexity - O(1)
+        Space Complexity - O(1)
+        """
+
+        # If the list is empty
+        if self.head is None:
+            return None
+        
+        # Assign the head to popped_none as it will be deleted
+        popped_node = self.head
+
+        # Assign both head and tail to None if the length is 1
+        if self.length == 1:
+            self.head = self.tail = None
+        
+        else:
+
+            # Assign the head pointer to the second node
+            self.head = self.head.next
+
+            # Make the tail node now pointes to the new head node
+            self.tail.next = self.head
+
+            # To disconnect the deleted node, assign its next value to None
+            popped_node.next = None
+
+        # Decrement the length value
+        self.length -= 1
+
+        # Return the deleted node
+        return popped_node
+
                 
 
 
