@@ -28,4 +28,18 @@ def remove_duplicates(head):
     return dummy.next
 
 
+head = NodeList(1)
+n1 = NodeList(2)
+n2 = NodeList(2)
+n3 = NodeList(3)
+n4 = NodeList(4)
+n5 = NodeList(4)
+n6 = NodeList(5)
+head.next = n1
+n1.next = n2
+n2.next = n3
+n3.next = n4
+n4.next = n5
+n5.next = n6
+
 remove_duplicates(head)

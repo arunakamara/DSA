@@ -11,7 +11,7 @@ def merge_sorted_lists(list1, list2):
     ptr2 = list2.head
 
     merged_list = LinkedList()  # Dummy init, will overwrite head later
-    merged_list.length = 0
+    # merged_list.length = 0
 
     # Actual merge
     while ptr1 and ptr2:
@@ -39,3 +39,23 @@ def merge_sorted_lists(list1, list2):
 
     return merged_list
 
+
+l1 = LinkedList()
+l2 = LinkedList()
+
+l1.append(1)
+l1.append(3)
+l1.append(4)
+l1.append(7)
+l1.append(9)
+
+l2.append(2)
+l2.append(5)
+l2.append(6)
+
+print(l1)
+print(l2)
+
+merged = merge_sorted_lists(l1,l2)
+print(merged)
+print(merged.length)

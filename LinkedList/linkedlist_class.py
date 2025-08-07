@@ -15,6 +15,12 @@ class LinkedList:
         self.tail = None
         self.length = 0
 
+    # def __init__(self, value):
+    #     node = Node(value)
+    #     self.head = node
+    #     self.tail = node
+    #     self.length = 1
+
     def __repr__(self):
         if self.length == 0:
             return f"[]"
@@ -320,8 +326,3 @@ class LinkedList:
         self.tail = None
         self.length = 0
 
-l = LinkedList()
-l.append(10)
-l.append(20)
-l.append(30)
-l.append(40)
