@@ -148,6 +148,21 @@ class CSLinkedList:
                 current = current.next
                 index += 1
         return -1
+    
+
+    def get(self, index):
+
+        if index == -1:
+            return self.tail
+        elif index < -1 or index >= self.length:
+            return None
+        
+        current = self.head
+
+        for _ in range(index):
+            current = current.next
+
+        return current
 
                 
 
@@ -159,6 +174,5 @@ csl.append(30)
 csl.append(40)
 csl.append(50)
 print(csl)
-csl.traverse()
 
         
