@@ -127,6 +127,30 @@ class CSLinkedList:
             if current == self.head:
                 break
 
+    def search(self, target):
+        """
+        Returns the index of the target value else -1 
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+        
+        current = self.head
+        index = 0
+
+        while current:
+            if current.value == target:
+                return index
+            else:
+                # Exit the loop if the next node of the current node is equal to head
+                # if current.next == self.head:
+                if current is self.tail:
+                    break
+                current = current.next
+                index += 1
+        return -1
+
+                
+
 
 csl = CSLinkedList()
 csl.append(10)
