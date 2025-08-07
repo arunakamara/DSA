@@ -217,6 +217,47 @@ class CSLinkedList:
 
         # Return the deleted node
         return popped_node
+    
+    def pop(self):
+        """
+        Deletes and return the last node of the list
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        # If the list is empty
+        if self.head is None:
+            return None
+        
+        # Assign the tail to popped_none as it will be deleted
+        popped_node = self.tail
+
+        # Assign both head and tail to None if the length is 1
+        if self.length == 1:
+            self.head = self.tail = None
+        
+        else:
+            
+            current = self.head
+
+            # Loop through till you reach the second-to-last node
+            while current.next is not self.tail:
+                current = current.next
+
+            # Make the second-to-last node points to the head
+            current.next = self.head
+
+            # Assign the second-to-last node to self.tail
+            self.tail = current
+
+            # Make the popped node points to None in order to disconnect it from the list
+            popped_node.next = None
+       
+        # Return the deleted node
+        self.length -= 1
+
+        # Return the popped node
+        return popped_node
 
                 
 
