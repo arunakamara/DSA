@@ -260,6 +260,34 @@ class CSLinkedList:
         return popped_node
 
                 
+    def remove(self, index):
+        """
+        Deletes and returns the node at the given index
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        if index < 0 or index >= self.length:
+            return None
+        
+
+        elif index == 0:
+            return self.pop_first()
+        elif index == self.length - 1:
+            return self.pop()
+        
+        else:
+
+            # Use the get method to get the node just before the node to be deleted
+            prev_node = self.get(index-1)
+
+            popped_node = prev_node.next
+            prev_node.next = popped_node.next
+            popped_node.next = None
+
+            self.length -= 1
+            return popped_node
+
 
 
 csl = CSLinkedList()
