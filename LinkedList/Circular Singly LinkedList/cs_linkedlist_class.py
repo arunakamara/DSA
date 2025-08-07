@@ -151,7 +151,11 @@ class CSLinkedList:
     
 
     def get(self, index):
-
+        """
+        Returns the node at the given index
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
         if index == -1:
             return self.tail
         elif index < -1 or index >= self.length:
@@ -163,6 +167,20 @@ class CSLinkedList:
             current = current.next
 
         return current
+    
+    def set_value(self, index, value):
+        """
+        Update the value of the node at the given index
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+        node = self.get(index)
+
+        if node:
+            node.value = value
+            return True
+        else:
+            return False
 
                 
 
