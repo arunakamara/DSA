@@ -287,6 +287,19 @@ class CSLinkedList:
 
             self.length -= 1
             return popped_node
+        
+    def delete_all(self):
+        """
+        Delete all the nodes in the list
+        Time Complexity - O(1)
+        Space Complexity - O(1)
+        """
+        if self.head is None:
+            return
+        self.tail.next = None
+        self.head = None
+        self.tail = None
+        self.length = 0
 
 
 
