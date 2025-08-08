@@ -333,6 +333,21 @@ class CSLinkedList:
             if current == self.head:
                 break
         return False
+    
+    def count_nodes(self):
+        if self.head is None:
+            return 0
+      
+        current = self.head
+        count = 1
+
+        while current:
+            current = current.next
+            if current is self.head:
+                break
+            count += 1
+
+        return count
 
     def split_list(self):
         """

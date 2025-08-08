@@ -30,10 +30,7 @@ class csLinkedList(CSLinkedList):
     def count(self):
         if self.head is None:
             return 0
-        
-        # single
-
-
+      
         current = self.head
         count = 1
 
