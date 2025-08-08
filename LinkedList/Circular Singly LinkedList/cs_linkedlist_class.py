@@ -335,6 +335,12 @@ class CSLinkedList:
         return False
 
     def split_list(self):
+        """
+        Splits a list into two equal halves if even 
+        If odd the extra goes to the first half
+        Time Complexity - O(n)
+        Space Complexity - O(n)
+        """
         if self.length == 0:
             return None, None
         
@@ -383,6 +389,38 @@ class CSLinkedList:
 
         # Return both first and second list
         return first_list, second_list
+    
+    def is_Sorted(self):
+        """
+        Return True if sorted, else False
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        # An empty list is considered to be sorted
+        if self.head is None:
+            return True
+        
+        # current = self.head
+        # while current.next != self.head:
+        #     if current.value > current.next.data:
+        #         return False
+        #     temp = temp.next
+
+        dummy = Node(float('-inf'))
+        prev = dummy
+        dummy.next = self.head
+        current = self.head
+
+        while current:
+            if prev.value > current.value:
+                return False
+            prev = current
+            current = current.next
+            if current is self.head:
+                break
+        
+        return True
    
 
 def main():
