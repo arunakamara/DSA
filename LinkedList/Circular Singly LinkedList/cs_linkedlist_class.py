@@ -334,6 +334,55 @@ class CSLinkedList:
                 break
         return False
 
+    def split_list(self):
+        if self.length == 0:
+            return None, None
+        
+        # We added 1 to the length in order to ensure that
+        # for odd lengths, the extra one element will be in the first list
+        mid = (self.length + 1) // 2
+
+        # Initialize count to 1, to keep track of when the loop reaches the middle of the list
+        count = 1
+
+        # Create two lists to hold the first and second half of the original list
+        first_list = CSLinkedList()
+        second_list = CSLinkedList()
+
+        # Set a pointer to the head of the original list
+        current = self.head
+
+        # Initialize a variable to keep track of the last node of the first half
+        last_first_list = None
+
+        # Loops through the first half of the original list and append each node to the first list
+        while count <= mid:
+            first_list.append(current.value)
+            last_first_list = current
+            current = current.next
+            count += 1
+
+
+        # Set the tail of the first half
+        if last_first_list:                         # Checks if there is at least one node in the first list
+            first_list.tail = last_first_list       # Sets the tail of first_list to its last node
+            first_list.tail.next = first_list.head  # Make the tail points to the head of the first list
+
+
+        # Handle the second half
+        # Loops through the second half of the list and appends each node to the second list
+        while current != self.head:
+            second_list.append(current.value)
+            current = current.next
+
+                
+        # Set the tail of the second half
+        if second_list.length > 0:                      # Checks if the second list has at least one node
+            second_list.tail = self.tail                # Set its tail to the tail of the original list
+            second_list.tail.next = second_list.head    # Make the tail points to the head of the second list
+
+        # Return both first and second list
+        return first_list, second_list
    
 
 def main():
