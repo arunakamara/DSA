@@ -77,7 +77,7 @@ class DoubleLinkedList:
 
     def traverse(self):
         """
-        Prints out each value in the list
+        Prints out each value in the list starting from the head
         Time Complexity - O(n)
         Space Complexity - O(1)
         """
@@ -88,6 +88,19 @@ class DoubleLinkedList:
             print(current.value)
             current = current.next
         
+    def reverse_traverse(self):
+        """
+        Prints each value of the list in the reverse order
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+        current = self.tail
+
+        while current:
+            print(current.value)
+            current = current.prev
+
+
 
 
 l = DoubleLinkedList()
