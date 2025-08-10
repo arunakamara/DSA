@@ -150,6 +150,18 @@ class DoubleLinkedList:
         # Return the node at the given index
         return current
 
+    def set_value(self, index, value):
+        """
+        Update the value of the node at the given index
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+        node = self.get(index)
+
+        if node:
+            node.value = value
+            return True
+        return False
 
 
 l = DoubleLinkedList()
