@@ -127,9 +127,12 @@ class DoubleLinkedList:
         Time Complexity - O(n)
         Space Complexity - O(1)
         """
+        # Returns None for invalid index
         if index < 0 or index >= self.length:
             return None
 
+        # Find the middle of the list
+        # and traverse from the the head if the index is in the first part
         if index <= self.length // 2:
             current = self.head
 
@@ -138,11 +141,13 @@ class DoubleLinkedList:
 
         else:
 
+            # Traverse from the tail of the second part
             current = self.tail
 
             for _ in range(self.length-1, index, -1):
                 current = current.prev
         
+        # Return the node at the given index
         return current
 
 
