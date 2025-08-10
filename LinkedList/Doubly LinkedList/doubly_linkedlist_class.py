@@ -75,6 +75,18 @@ class DoubleLinkedList:
 
         self.length += 1
 
+    def traverse(self):
+        """
+        Prints out each value in the list
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        current = self.head 
+
+        while current:
+            print(current.value)
+            current = current.next
         
 
 
