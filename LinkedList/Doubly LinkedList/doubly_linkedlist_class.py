@@ -192,6 +192,30 @@ class DoubleLinkedList:
         current.next = new_node
         self.length += 1
 
+    
+    def pop_first(self):
+        """
+        Delete and return the first node
+        Time Complexity - O(1)
+        Space Complexity - O(1)
+        """
+        if not self.head:
+            return None
+        popped_node = self.head
+
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+
+        else:
+
+            self.head = self.head.next
+            self.head.prev = None
+            popped_node.next = None
+
+        self.length -= 1
+        return popped_node
+
 
 l = DoubleLinkedList()
 print(l)
