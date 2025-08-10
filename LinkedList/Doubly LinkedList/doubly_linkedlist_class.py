@@ -15,7 +15,23 @@ class DoubleLinkedList:
         self.head = None
         self.tail = None
         self.length = 0
+
+    def __repr__(self):
+        if self.head is None:
+            return "empty List"
+        
+        current = self.head
+        result = ""
+
+        while current:
+            result += str(current.value)
             
+            if current.next:
+                result += ' <-> '
+            
+            current = current.next
+    
+        return result
 
     def append(self, value):
         """
@@ -41,3 +57,13 @@ class DoubleLinkedList:
 
 
 
+l = DoubleLinkedList()
+print(l)
+l.append(10)
+print(l)
+l.append(20)
+print(l)
+l.append(30)
+print(l)
+l.append(40)
+print(l)
