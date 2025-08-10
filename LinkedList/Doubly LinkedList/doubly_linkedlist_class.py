@@ -163,6 +163,35 @@ class DoubleLinkedList:
             return True
         return False
 
+    def insert(self, index, value):
+        """
+        Inserts a new node at the given index
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+        if index < 0 or index > self.length:
+            print("Index out of bound.")
+            return
+        
+        new_node = Node(value)
+
+        if index == 0:
+            self.prepend(value)
+            return
+        
+        elif index == self.length:
+            self.append(value)
+            return
+        
+        # Get the node just before the node at the given index
+        current = self.get(index-1)
+
+        new_node.next = current.next
+        new_node.prev = current
+        current.next.prev = new_node
+        current.next = new_node
+        self.length += 1
+
 
 l = DoubleLinkedList()
 print(l)
