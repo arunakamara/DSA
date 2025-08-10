@@ -216,6 +216,30 @@ class DoubleLinkedList:
         self.length -= 1
         return popped_node
 
+    
+    def pop(self):
+        """
+        Delete and return the last node from the list
+        Time Complexity - O(1)
+        Space Complexity - O(1)
+        """
+
+        if not self.head:
+            return None
+        
+        popped_node = self.tail
+        
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+        
+        else:
+            self.tail = popped_node.prev
+            self.tail.next = None
+            popped_node.prev = None
+        
+        self.length -= 1
+        return popped_node
 
 l = DoubleLinkedList()
 print(l)
