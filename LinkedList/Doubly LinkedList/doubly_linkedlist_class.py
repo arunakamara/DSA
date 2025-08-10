@@ -121,6 +121,31 @@ class DoubleLinkedList:
 
         return -1
 
+    def get(self, index):
+        """
+        Returns the node at the given index
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+        if index < 0 or index >= self.length:
+            return None
+
+        if index <= self.length // 2:
+            current = self.head
+
+            for _ in range(index):
+                current = current.next
+
+        else:
+
+            current = self.tail
+
+            for _ in range(self.length-1, index, -1):
+                current = current.prev
+        
+        return current
+
+
 
 l = DoubleLinkedList()
 print(l)
