@@ -192,7 +192,6 @@ class DoubleLinkedList:
         current.next = new_node
         self.length += 1
 
-    
     def pop_first(self):
         """
         Delete and return the first node
@@ -216,7 +215,6 @@ class DoubleLinkedList:
         self.length -= 1
         return popped_node
 
-    
     def pop(self):
         """
         Delete and return the last node from the list
@@ -240,6 +238,32 @@ class DoubleLinkedList:
         
         self.length -= 1
         return popped_node
+
+    def remove(self, index):
+        """
+        Deletes and return the node at the given index
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        if index < 0 or index >= self.length:
+            return None
+        
+        if index == 0:
+            return self.pop_first()
+        elif index == self.length - 1:
+            return self.pop()
+        else:
+            popped_node = self.get(index)
+            popped_node.prev.next = popped_node.next
+            popped_node.next.prev = popped_node.prev
+            popped_node.next = None
+            popped_node.prev = None
+            self.length -= 1
+            return popped_node
+
+
+
 
 l = DoubleLinkedList()
 print(l)
