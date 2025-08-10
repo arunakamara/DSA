@@ -100,7 +100,26 @@ class DoubleLinkedList:
             print(current.value)
             current = current.prev
 
+    def search(self, target):
+        """
+        Returns the index of the target else -1
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
 
+        if not self.head:
+            return None
+        
+        current = self.head
+        index = 0
+
+        while current:
+            if current.value == target:
+                return index
+            current = current.next
+            index += 1
+
+        return -1
 
 
 l = DoubleLinkedList()
