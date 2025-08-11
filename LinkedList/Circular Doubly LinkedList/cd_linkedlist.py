@@ -104,7 +104,22 @@ class CDLinkedList:
             if current is self.head:
                 break
 
+    def reverse_traverse(self):
+        """
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
 
+        current = self.tail
+
+        while current:
+
+            print(current.value)
+            current = current.prev
+            
+            if current is self.tail:
+                break
+            
 
 
 l = CDLinkedList()
