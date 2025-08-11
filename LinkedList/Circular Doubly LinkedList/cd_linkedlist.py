@@ -150,7 +150,6 @@ class CDLinkedList:
         if index < 0 or index >= self.length:
             return None
         
-        # current = None
 
         if index < self.length // 2:
             current = self.head
@@ -169,6 +168,19 @@ class CDLinkedList:
 
             return current
 
+    def set_value(self, index, value):
+        """
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        node = self.get(index)
+
+        if node:
+            node.value = value
+            return True
+        
+        return False
 
 
 l = CDLinkedList()
