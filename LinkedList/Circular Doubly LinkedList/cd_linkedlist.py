@@ -89,5 +89,27 @@ class CDLinkedList:
         
         self.length += 1
 
+    def traverse(self):
+        """
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        current = self.head
+
+        while current:
+
+            print(current.value)
+            current = current.next
+            if current is self.head:
+                break
+
+
+
 
 l = CDLinkedList()
+l.append(5)
+l.append(6)
+l.append(7)
+l.prepend(4)
+l.prepend(3)
