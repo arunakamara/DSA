@@ -119,8 +119,27 @@ class CDLinkedList:
             
             if current is self.tail:
                 break
-            
 
+    def search(self, value):
+        """
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        current = self.head
+        index = 0
+        
+        while current:
+            if current.value == value:
+                return index
+            
+            current = current.next
+            index += 1
+
+            if current is self.head:
+                break
+
+        return -1
 
 l = CDLinkedList()
 l.append(5)
