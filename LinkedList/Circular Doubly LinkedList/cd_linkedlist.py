@@ -37,12 +37,33 @@ class CDLinkedList:
 
             if current is self.head:
                 break
-            
+
             result += ' <-> '
         
         return result
 
-    
+    def append(self, value):
+        """
+        Time Complexity - O(1)
+        Space Complexity - O(1)
+        """
+        new_node = Node(value)
+
+        if self.length == 0:
+            self.head = new_node
+            self.tail = new_node
+            new_node.next = new_node
+            new_node.prev = new_node
+
+        else:
+
+            self.tail.next = new_node
+            self.head.prev = new_node
+            new_node.prev = self.tail
+            new_node.next = self.head
+            self.tail = new_node
+
+        self.length += 1
 
     
 
