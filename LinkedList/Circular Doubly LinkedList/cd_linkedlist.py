@@ -265,7 +265,35 @@ class CDLinkedList:
 
         return popped_node
 
+    def remove(self, index):
+        """
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+        
+        if index < 0 or index >= self.length:
+            return None
+        if index == 0:
+            return self.pop_first()
+        
+        elif index == self.length-1:
+            return self.pop()
+        
+        else: 
+            
+            current = self.head
 
+            for _ in range(index-1):
+                current = current.next
+
+            deleted_node = current.next
+            current.next = deleted_node.next
+            deleted_node.next.prev = current
+            deleted_node.next = None
+            deleted_node.prev = None
+
+            self.length -= 1
+            return deleted_node
 
 
 
