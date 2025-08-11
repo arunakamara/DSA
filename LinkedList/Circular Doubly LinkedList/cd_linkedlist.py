@@ -213,6 +213,41 @@ class CDLinkedList:
             current.next = new_node
             self.length += 1
 
+    def pop_first(self):
+        """
+        Time Complexity - O(1)
+        Space Complexity - O(1)
+        """
+
+        if not self.head:
+            return None
+        
+        popped_node = self.head
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+        
+        else:
+
+            self.head = popped_node.next
+            popped_node.prev = None
+            popped_node.next = None
+            self.head.prev = self.tail
+            self.tail.next = self.head            
+
+        self.length -= 1
+
+        return popped_node
+
+            
+
+
+
+
+
+
+
+
 l = CDLinkedList()
 l.append(5)
 l.append(6)
