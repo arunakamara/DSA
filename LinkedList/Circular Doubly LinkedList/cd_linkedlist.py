@@ -141,9 +141,41 @@ class CDLinkedList:
 
         return -1
 
+    def get(self, index):
+        """
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        if index < 0 or index >= self.length:
+            return None
+        
+        # current = None
+
+        if index < self.length // 2:
+            current = self.head
+
+            for _ in range(index):
+                current = current.next
+            
+            return current
+        
+        else:
+
+            current = self.tail
+
+            for _ in range(self.length-1, index, -1):
+                current = current.prev
+
+            return current
+
+
+
 l = CDLinkedList()
 l.append(5)
 l.append(6)
 l.append(7)
 l.prepend(4)
 l.prepend(3)
+
+l.get(2)
