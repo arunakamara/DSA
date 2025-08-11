@@ -182,6 +182,36 @@ class CDLinkedList:
         
         return False
 
+    def insert(self, index, value):
+        """
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        """
+
+        if index < 0 or index > self.length:
+            print("Error: Index out of bounds.")
+            return 
+        
+        if index == 0:
+            return self.prepend(value)
+        
+        elif index == self.length:
+            return self.append(value)
+        
+        else:
+
+            new_node = Node(value)
+
+            current = self.head
+
+            for _ in range(index-1):
+                current = current.next
+
+            new_node.next = current.next
+            new_node.prev = current
+            current.next.prev = new_node
+            current.next = new_node
+            self.length += 1
 
 l = CDLinkedList()
 l.append(5)
