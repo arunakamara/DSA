@@ -239,7 +239,31 @@ class CDLinkedList:
 
         return popped_node
 
-            
+    def pop(self):
+        """
+        Time Complexity - O(1)
+        Space Complexity - O(1)
+        """
+
+        if not self.head:
+            return None
+        
+        popped_node = self.tail
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+
+        else:
+
+            self.tail = popped_node.prev
+            popped_node.next = None
+            popped_node.prev = None
+            self.tail.next = self.head
+            self.head.prev = self.tail
+
+        self.length -= 1
+
+        return popped_node
 
 
 
