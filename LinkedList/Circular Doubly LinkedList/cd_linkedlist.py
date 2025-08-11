@@ -295,7 +295,10 @@ class CDLinkedList:
             self.length -= 1
             return deleted_node
 
-
+    def delete_all(self):
+        self.head = None
+        self.tail = None
+        self.length = 0
 
 
 
