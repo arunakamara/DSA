@@ -60,11 +60,16 @@ class LinkedList:
 
         for _ in range(n):
             self.add(randint(min_value, max_value))
+
+
+def main():
+    l = LinkedList()
+    print(l)
+    l.generate(10, 5, 15)
+    print(l)
+    print(len(l))
     
-    
+
+if __name__ == "__main__":
+    main()
         
-l = LinkedList()
-print(l)
-l.generate(10, 5, 15)
-print(l)
-print(len(l))
