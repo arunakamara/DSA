@@ -37,7 +37,18 @@ class LinkedList:
         return result
     
 
-    
+    def add(self, value):
+        new_node = Node(value)
+        if not self.head:
+            self.head = new_node
+            self.tail = new_node
+
+        else:
+
+            self.tail.next = new_node
+            self.tail = new_node
+
+        return self.tail
     
     
         
