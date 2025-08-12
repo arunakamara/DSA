@@ -1,3 +1,5 @@
+from random import randint
+
 class Node:
     def __init__(self, value=None):
         self.value = value
@@ -49,6 +51,14 @@ class LinkedList:
             self.tail = new_node
 
         return self.tail
+    
+
+    def generate(self, n, min_value, max_value):
+        self.head = None
+        self.tail = None
+
+        for _ in range(n):
+            self.add(randint(min_value, max_value))
     
     
         
