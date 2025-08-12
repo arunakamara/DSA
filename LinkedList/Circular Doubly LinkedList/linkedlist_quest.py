@@ -7,3 +7,38 @@ class Node:
 
     def __str__(self):
         return str(self.value)
+    
+
+class LinkedList:
+    def __init__(self, values=None):
+        self.head = None
+        self.tail = None
+
+    def __iter__(self):
+        current = self.head
+
+        while current:
+            yield current
+            current = current.next
+    
+    def __repr__(self):
+        values = [ str(x.value) for x in self ]
+        return ' -> '.join(values)
+    
+    def __len__(self):
+        result = 0
+
+        current = self.head
+
+        while current:
+            result += 1
+            current = current.next
+        
+        return result
+    
+
+    
+    
+    
+        
+    
