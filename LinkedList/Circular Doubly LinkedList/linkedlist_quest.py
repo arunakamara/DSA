@@ -7,7 +7,7 @@ class Node:
         self.prev = None
 
 
-    def __str__(self):
+    def __repr__(self):
         return str(self.value)
     
 
@@ -54,12 +54,17 @@ class LinkedList:
     
 
     def generate(self, n, min_value, max_value):
-        self.head = None
-        self.tail = None
+        """
+        Returns a linkedlist with random values
+        """
 
         for _ in range(n):
             self.add(randint(min_value, max_value))
     
     
         
-    
+l = LinkedList()
+print(l)
+l.generate(10, 5, 15)
+print(l)
+print(len(l))
