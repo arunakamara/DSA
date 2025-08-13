@@ -4,6 +4,8 @@ from linkedlist_quest import LinkedList
 def nthToLast(ll, n):
     """
     Returns the nth element from the last
+    Time Complexity - O(n)
+    Space Complexity - O(1)
     """
 
     # Initialize both pointer to head
