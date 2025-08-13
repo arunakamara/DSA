@@ -41,7 +41,36 @@ def intersection(llA, llB):
 
 
 
+# Helper addition method
+def addSameNode(llA, llB, value):
+    """
+    An helper function to add a single node to both lists
+    Time Complexity - O(1)
+    Space Complexity - O(1)
+    """
+    # Create a temp node with the given value
+    tempNode = Node(value)
+
+    # Add temp node to the end of list A
+    llA.tail.next = tempNode
+    llA.tail = tempNode
+
+    # Add temp node to the end of list B
+    llB.tail.next = tempNode
+    llB.tail = tempNode
 
 
+llA = LinkedList()
+llA.generate(3, 0, 10)
 
+llB = LinkedList()
+llB.generate(4, 0, 10)
+
+addSameNode(llA, llB, 11)
+addSameNode(llA, llB, 14)
+
+print(llA)
+print(llB)
+
+print(f"Intersected Node: {intersection(llA, llB)}")
 
