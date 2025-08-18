@@ -44,6 +44,11 @@ def traverse(arr):
     return
 
 def search(arr, value):
+    """
+    Returns the location of the value
+    Time Complexity - O(mn)
+    Space Complexity - (1)
+    """
     for i in range(len(arr)):
         for j in range(len(arr[0])):
             if arr[i][j] == value:
