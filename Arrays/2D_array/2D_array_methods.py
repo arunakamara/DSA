@@ -15,6 +15,8 @@ def insert(arr, index=0, data=[], axis=0):
         raise ValueError(f"Invalid number of data entered. \nPlease enter a data of length {len(arr[0]) if axis == 0 else len(arr) }")
     return np.insert(arr, index, data, axis)
 
+
+
 # Access Method
 def accessElement(arr):
     """
@@ -30,14 +32,28 @@ def accessElement(arr):
     return arr[rowIndex][colIndex]
 
 
+def traverse(arr):
+    """
+    Time Complexity - O(mn)
+    Space Complexity - O(1)
+    """
+    for i in range(len(arr)):
+        for j in range(len(arr[0])):
+            print(arr[i][j], end=" ")
+        print("  ", end="")
+    return
+
+
 def main():
     arr = TwoD_array
-    # new_array = insert(arr)
+    new_array = insert(arr)
 
-    print(arr)
+    print(arr, end="\n\n")
 
     element = accessElement(arr)
     print(element)
+
+    traverse(arr)
 
 
 if __name__ == "__main__":
