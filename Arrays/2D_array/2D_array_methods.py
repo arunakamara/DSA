@@ -43,17 +43,26 @@ def traverse(arr):
         print("  ", end="")
     return
 
+def search(arr, value):
+    for i in range(len(arr)):
+        for j in range(len(arr[0])):
+            if arr[i][j] == value:
+                return f"The value is located at {i}, {j}"
+    return f"The element is not found."
+
 
 def main():
     arr = TwoD_array
-    new_array = insert(arr)
+    # new_array = insert(arr)
 
-    print(arr, end="\n\n")
+    # print(arr, end="\n\n")
 
-    element = accessElement(arr)
-    print(element)
+    # element = accessElement(arr)
+    # print(element)
 
-    traverse(arr)
+    # traverse(arr)
+
+    print(search(arr, 2))
 
 
 if __name__ == "__main__":
