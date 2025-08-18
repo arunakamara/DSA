@@ -47,7 +47,7 @@ def search(arr, value):
     """
     Returns the location of the value
     Time Complexity - O(mn)
-    Space Complexity - (1)
+    Space Complexity - O(1)
     """
     for i in range(len(arr)):
         for j in range(len(arr[0])):
