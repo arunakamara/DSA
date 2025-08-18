@@ -3,6 +3,11 @@ import numpy as np
 
 # Insert Method
 def insert(arr, index=0, data=[], axis=0):
+    """
+    Adds a new row or a new column to the array
+    Time Complexity - O(mn)
+    Space Complexity - O(mn)
+    """
     index = int(input("Enter index: "))
     axis = int(input("Enter axis: "))
     data = list(map(int, input("Enter data: ").split()))
@@ -12,6 +17,11 @@ def insert(arr, index=0, data=[], axis=0):
 
 # Access Method
 def accessElement(arr):
+    """
+    Returns the element at the given indices
+    Time Complexity - O(1)
+    Space Complexity - O(1)
+    """
     rowIndex = int(input("Enter the row index: "))
     colIndex = int(input("Enter the column index: "))
 
