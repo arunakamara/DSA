@@ -56,6 +56,9 @@ def search(arr, value):
     return f"The element is not found."
 
 
+
+
+
 def main():
     arr = TwoD_array
     # new_array = insert(arr)
@@ -67,7 +70,11 @@ def main():
 
     # traverse(arr)
 
-    print(search(arr, 2))
+    # print(search(arr, 2))
+
+    print(arr, end="\n\n")
+
+    print(np.delete(arr, 0, axis=1))
 
 
 if __name__ == "__main__":
