@@ -41,3 +41,17 @@ def searchinList(list, value):
 
 print(searchinList(myList, 100))
 
+
+# Deleting an element from the List
+print(myList)
+# pop - O(1)
+# print(myList.pop(-3))
+
+# delete method 
+# del myList # Deletes the entire list
+del myList[-1]
+
+# remove method
+myList.remove(40)
+print(myList)
+
