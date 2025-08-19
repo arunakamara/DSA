@@ -27,3 +27,11 @@ class Stack:
         self.top = new_node
         self.length += 1
     
+
+my_stack = Stack()
+
+my_stack.push(10)
+my_stack.push(20)
+
+print(my_stack.top.value)
+print("Hello")
