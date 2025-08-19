@@ -75,6 +75,9 @@ class Stack:
     def peek(self):
         return self.top
 
+    def clear(self):
+        self.top = None
+        self.length = 0
         
 
     
