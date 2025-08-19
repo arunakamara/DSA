@@ -44,6 +44,12 @@ class Stack:
             return "Stack is empty"
         
         return self.items[-1]
+    
+    def size(self):
+        return len(self.items)
+    
+    def clear(self):
+        self.items = []
 
 
 # Because we're using list no need to
