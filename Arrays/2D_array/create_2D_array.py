@@ -28,8 +28,8 @@ def main():
     print()
 
     # #Append a new column
-    print(np.append(TwoD_array, np.array([[4, 4, 4]]).reshape(-1, 1), axis=1))
-
+    print(np.append(TwoD_array, np.array([[4, 4, 4]]).reshape(-1, 1), axis=1))  # Use of reshape()
+    print(np.append(TwoD_array, np.array[[4], [4], [4]])) # Alternative way
 
 if __name__ == "__main__":
     main()
