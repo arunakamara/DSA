@@ -3,7 +3,7 @@
 def main():
     myList = [1, 2, 3, 2, 3, 4, 5, 6]
     # print(find_pairs(myList, 6))
-    print(twoSum([2, 7, 11, 15], 9))
+    print(twoSum([ 4, 6, 3, 3, 11, 2, 15], 6))
 
 
 def twoSum(arr, target):
@@ -12,10 +12,11 @@ def twoSum(arr, target):
     """
     seen = {}
 
-    complement = None
-
     for i, num in enumerate(arr):
         complement = target - num
+
+        # Condition for unique pair
+        # if complement in seen and complement != num:
 
         if complement in seen:
             return seen[complement], i
