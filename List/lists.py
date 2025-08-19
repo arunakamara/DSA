@@ -50,8 +50,12 @@ print(myList)
 # delete method 
 # del myList # Deletes the entire list
 del myList[-1]
+del myList[2: 5]
 
 # remove method
-myList.remove(40)
+myList.remove(70)
+
 print(myList)
+
+
 
