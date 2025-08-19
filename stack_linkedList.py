@@ -15,3 +15,15 @@ class Stack:
         """Without a value"""
         self.top = None
         self.length = 0
+
+    
+    def push(self, value):
+        """
+        Time Complexity - O(1)
+        Space Complexity - O(1)
+        """
+        new_node = Node(value)
+        new_node.next = self.top
+        self.top = new_node
+        self.length += 1
+    
