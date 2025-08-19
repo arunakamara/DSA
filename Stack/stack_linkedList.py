@@ -70,6 +70,10 @@ class Stack:
         
         self.length -= 1
         return popped_node
+    
+
+    def peek(self):
+        return self.top
 
         
 
@@ -90,3 +94,7 @@ print()
 print(f"Top: {my_stack.top}")
 
 print(f"POPPED: {my_stack.pop()}")
+
+print()
+
+print(my_stack)
