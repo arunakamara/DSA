@@ -34,6 +34,16 @@ class Stack:
         if self.is_empty():
             return "Stack is empty"
         return self.items.pop()
+    
+    def peek(self):
+        """
+        Time Complexity - O(1)
+        Space Complexity - O(1)
+        """
+        if self.is_empty():
+            return "Stack is empty"
+        
+        return self.items[-1]
 
 
 # Because we're using list no need to
@@ -41,13 +51,14 @@ class Stack:
 # print(len(my_stack.items))
 
 my_stack = Stack()
+
 my_stack.push(10)
 my_stack.push(20)
 my_stack.push(30)
+
+# print(my_stack)
+# print(f"POPPED: {my_stack.pop()}")
+
 print(my_stack)
-print(f"POPPED: {my_stack.pop()}")
-print(f"POPPED: {my_stack.pop()}")
-print(f"POPPED: {my_stack.pop()}")
-print(f"POPPED: {my_stack.pop()}")
-print(my_stack)
+print(f"PEEKED: {my_stack.peek()}")
  
