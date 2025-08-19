@@ -6,6 +6,18 @@ class Stack:
         """
         self.items = []
 
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def __repr__(self):
+        if self.is_empty():
+            return "Stack is empty"
+        
+        # Using list comprehension to create a new list of strings from a reversed iterator of self.items
+        values = [str(x) for x in reversed(self.items)]
+        return '\n'.join(values)
+
+
     def push(self, element):
         """
         Time Complexity - O(1)
@@ -13,13 +25,14 @@ class Stack:
         """
         self.items.append(element)
 
+
+# Because we're using list no need to
+# track the length we can simply len() method
+# print(len(my_stack.items))
+
 my_stack = Stack()
 my_stack.push(10)
 my_stack.push(20)
 my_stack.push(30)
-print(my_stack.items)
-
-
-# Because we're using list no need to
-# track the length we can simply len() method
-print(len(my_stack.items))
+print(my_stack)
+ 
