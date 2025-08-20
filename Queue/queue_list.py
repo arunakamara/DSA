@@ -12,3 +12,7 @@ class Queue:
     def enqueue(self, value):
         self.items.append(value)
         return f"The element {value} is inserted at the end of the queue."
+    
+
+my_queue = Queue()
+print(my_queue)
