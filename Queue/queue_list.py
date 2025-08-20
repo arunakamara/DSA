@@ -8,3 +8,7 @@ class Queue:
     
     def is_empty(self):
         return len(self.items) == 0
+    
+    def enqueue(self, value):
+        self.items.append(value)
+        return f"The element {value} is inserted at the end of the queue."
