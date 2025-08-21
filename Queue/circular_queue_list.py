@@ -31,3 +31,12 @@ class CQueue:
         else:
             return False
         
+    def is_empty(self):
+        """
+        Time Complexity - O(1)
+        Space Complexity - O(1)
+        """
+        if self.front == -1 and self.rear == -1:
+            return True 
+        else:
+            return False
