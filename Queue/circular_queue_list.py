@@ -43,4 +43,34 @@ class CQueue:
         
 
     def enqueue(self, value):
-        ...
+        """
+        Time Complexity - O(1)
+        Space Complexity - O(1)
+        """
+        # If queue is already full
+        if self.is_full():
+            return f"Queue is already full"
+        
+        # If the last element added is already at the end but queue is not yet full
+        # We set rear to the beginning of the queue
+        if self.rear + 1 == self.max_size:
+            self.rear = 0
+        
+        # If there is more space that is rear is yet to reach the end of the queue
+        else:
+            self.rear += 1
+
+            # If the queue is empty then set front to 0 (because it was initial -1)
+            if self.front == -1:
+                self.front = 0
+        
+        # Add the new element at the rear position
+        self.items[self.rear]  = value
+
+        return f"The element {value} is add at the end of the queue."
+
+            
+q = CQueue(5)
+
+print(q)
+q = q.enqueue(1)
