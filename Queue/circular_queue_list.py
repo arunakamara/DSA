@@ -40,3 +40,7 @@ class CQueue:
             return True 
         else:
             return False
+        
+
+    def enqueue(self, value):
+        ...
