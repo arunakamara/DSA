@@ -25,6 +25,10 @@ class Queue:
         return ' '.join(values)
     
     def enqueue(self, value):
+        """
+        Time Complexity - O(1) 
+        Space Complexity - O(1)
+        """
         new_node = Node(value)
         if self.head is None:
             self.head = new_node
@@ -36,6 +40,35 @@ class Queue:
 
         return f"{value} has been added to the end of the queue"
     
+    def is_empty(self):
+        return self.head is None
+    
+
+    def dequeue(self):
+        """
+        Time Complexity - O(1)
+        Space Complexity - O(1)
+        """
+        if self.is_empty():
+            return "Queue is already empty."
+        
+        else:
+            front = self.head
+
+            if self.length == 1:
+                self.head = self.tail = None
+            
+            else:
+                self.head = self.head.next
+                front.next = None
+            
+            self.length -= 1
+            print(front.next)
+            return front
+                
+        
+       
+    
 
     
 
@@ -45,3 +78,5 @@ q.enqueue(5)
 q.enqueue(6)
 q.enqueue(7)
 print(q)
+
+print(q.dequeue())
