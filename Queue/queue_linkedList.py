@@ -63,11 +63,14 @@ class Queue:
                 front.next = None
             
             self.length -= 1
-            print(front.next)
             return front
                 
         
-       
+    def peek(self):
+        if self.is_empty():
+            return f"The queue is empty."
+        else:
+            return self.head
     
 
     
