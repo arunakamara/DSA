@@ -33,6 +33,9 @@ class Queue:
             return "The queue is empty"
 
         return self.items[0]
+    
+    def delete(self):
+        self.items = None
 
     
 
@@ -43,7 +46,6 @@ my_queue.enqueue(30)
 
 print(my_queue)
 
-my_queue.dequeue()
 print(my_queue)
 # print(my_queue.enqueue(5))
 # print(my_queue)
