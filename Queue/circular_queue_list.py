@@ -114,6 +114,12 @@ class CQueue:
         else:
             return self.items[self.front]
             
+    def delete(self):
+        self.items = self.max_size * [None]
+        self.rear = -1
+        self.front = -1
+
+
 q = CQueue(5)
 
 print(q)
