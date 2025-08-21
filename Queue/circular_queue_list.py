@@ -65,12 +65,62 @@ class CQueue:
                 self.front = 0
         
         # Add the new element at the rear position
-        self.items[self.rear]  = value
+        self.items[self.rear] = value
 
         return f"The element {value} is add at the end of the queue."
+    
 
+    def dequeue(self):
+        """
+        Time Complexity - O(1)
+        Space Complexity - O(1)
+        """
+
+        if self.is_empty():
+            return "The queue is already empty."
+        
+        else:
+            # Get the element at the front
+            first_element = self.items[self.front]
+
+            # Get the index of the front element for future reference 
+            front = self.front
+
+            # Check if there is only one element in the queue
+            if self.front == self.rear:
+                self.front = -1
+                self.rear = -1
+
+            # Check if the front is at the end of the queue
+            elif self.front + 1 == self.max_size:
+                self.front = 0
+
+            else:
+                self.front += 1
+
+            # Set the value at the index of front to None
+            self.items[front] = None
+
+            return first_element
+
+    def peek(self):
+        """
+        Time Complexity - O(1)
+        Space Complexity - O(1)
+        """
+        if self.is_empty():
+            return "The queue is empty."
+        
+        else:
+            return self.items[self.front]
             
 q = CQueue(5)
 
 print(q)
-q = q.enqueue(1)
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
+
+print(q)
+
+q.peek()
