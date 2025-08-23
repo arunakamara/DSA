@@ -4,6 +4,10 @@ def sum_of_digits(num):
     """
     Returns the sum of the individual digits
     """
+    assert num >= 0 and isinstance(num, int), "The number must be a positive integer"
+
+    # Alternative base condition
+    # if num == 0: return 0
 
     if num < 10:
         return num
